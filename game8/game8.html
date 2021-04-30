@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>پاکمان</title>
+	<link href="../img/15135810_703881689769530_7691430428131491054_n.jpg" rel="shortcut icon" />
+	<style type="text/css">@font-face {
+	    font-family: 'BDCartoonShoutRegular';
+        src: url('BD_Cartoon_Shout-webfont.ttf') format('truetype');
+	    font-weight: normal;
+	    font-style: normal;
+      }
+      #pacman {
+        height:450px;
+        width:342px;
+        margin:20px auto;
+      }
+      #shim { 
+        font-family: BDCartoonShoutRegular; 
+        position:absolute;
+        visibility:hidden
+      }
+      h1 { font-family: BDCartoonShoutRegular; text-align:center; }
+      body { width:100%; margin:0px auto; font-family:sans-serif; }
+      a { text-decoration:none; }
+         ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+                }
+
+            li {
+                float: left;
+                }
+
+            li a {
+                  display: block;
+                  color: white;
+                  text-align: center;
+                  padding: 14px 16px;
+                  text-decoration: none;
+                  }
+            #un{
+                text-decoration: none;
+               color:black;
+            }
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+            .container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 165px;
+  height: 165px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: lawngreen;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+	</style>
+</head>
+<body style="cursor: auto;">
+<ul>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/home%20page/home%20page.html">سەرەتا</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html">یاری مارەکە</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html">یاری کارت</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html">مەقەست و بەرد و کاغەز</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html">مەتەڵ</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html">پەڕینەوە</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html">پینگ</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html">2048</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html">پاکمان</a></li>
+
+	
+</ul>
+
+<div id="shim">shim for font face</div>
+
+<div id="pacman">&nbsp;</div>
+<script src="pacman.js"></script><script src="modernizr-1.5.min.js"></script><script>
+
+    var el = document.getElementById("pacman");
+
+    if (Modernizr.canvas && Modernizr.localstorage && 
+        Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
+      window.setTimeout(function () { PACMAN.init(el, "./"); }, 0);
+    } else { 
+      el.innerHTML = "Sorry, needs a decent browser<br /><small>" + 
+        "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
+    }
+  </script>
+
+<table>
+	<tbody>
+		<tr>
+			<th align="center">بابەتەکان</th>
+		</tr>
+		<tr>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html"><img alt="" class="image" src="../img/mar.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html"><img alt="" class="image" src="../img/card.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html"><img alt="" class="image" src="../img/mbk.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html"><img alt="" class="image" src="../img/matal.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html"><img alt="" class="image" src="../img/per.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html"><img alt="" class="image" src="../img/ping.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html"><img alt="" class="image" src="../img/2048.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html"> </a></div>
+			</td>
+			
+		</tr>
+	</tbody>
+</table>
+
+
+</body>
+</html>

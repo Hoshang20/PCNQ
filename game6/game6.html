@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="../img/15135810_703881689769530_7691430428131491054_n.jpg" rel="shortcut icon" />
+	<title>یاری پینگ</title>
+	<style type="text/css">ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+                }
+
+            li {
+                float: left;
+                }
+
+            li a {
+                  display: block;
+                  color: white;
+                  text-align: center;
+                  padding: 14px 16px;
+                  text-decoration: none;
+                  }
+            #un{
+                text-decoration: none;
+               color:black;
+            }
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+            .container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 165px;
+  height: 165px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: lawngreen;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}       body{
+                background-color: gray;
+            }
+
+.score {
+    font-family:monospace;
+    font-size:12px;
+    color:white; 
+    position:absolute;
+    left:15px;
+    top:4px;
+}
+
+
+#canvas{
+    width:50%;
+    height:50%;
+}
+	</style>
+	<script>
+
+var can;
+var ctx;
+var ballX;
+var ballSpeedX;
+var ballY;
+var ballSpeedY;
+var framesPerSecond = 30;
+var player1Y = 250;
+var player2Y = 250;
+var mousePos;
+const PLAYER_HEIGHT = 50;
+var playerScore = 0;
+var scoreAdder = 1;
+var playerLives = 3;
+var losed = false;
+
+window.onload = function(){
+    can = document.getElementById("canvas");
+    ctx = can.getContext("2d");
+    ballX = can.width/2;
+    ballSpeedX = 10;
+    ballY = can.height/2;
+    ballSpeedY = 4;
+    setInterval(function(){
+        moveShapes();
+        drawShapes();
+        playerScoreAdd();
+        checkLives();
+        drawScore();
+    }, 1000/framesPerSecond);
+    can.addEventListener("mousemove",
+        function(evt){
+            mousePos = getMousePos(evt);
+            player1Y = mousePos.y;
+        })
+}
+
+function drawShapes(){
+    drawRects(0,0,can.width,can.height,"black");
+    drawRects(0,player1Y,10,PLAYER_HEIGHT,"white");
+    drawRects(can.width-10,player2Y,10,PLAYER_HEIGHT,"white");
+    drawBall(ballX,ballY,5,"white");
+}
+
+function moveShapes(){
+    ballX += ballSpeedX;
+    if(ballX < 2.5){
+        if(ballY > player1Y && ballY < player1Y + PLAYER_HEIGHT){
+            ballSpeedX = -ballSpeedX;
+        }else{
+            ballReset();
+            playerLives -= 1;
+        }
+    }
+    if(ballX>can.width-2.5){
+        ballSpeedX = -ballSpeedX;
+    }
+    ballY += ballSpeedY;
+    if(ballY<2.5 || ballY>can.height-2.5){
+        ballSpeedY = -ballSpeedY;
+    }
+}
+
+function drawRects(rectX, rectY, rectWidth, rectHeight, rectColor){
+    ctx.fillStyle = rectColor;
+    ctx.fillRect(rectX, rectY, rectWidth, rectHeight);
+}
+
+function drawBall(ballPosX, ballPosY, radius, ballColor){
+    ctx.fillColor = ballColor;
+    ctx.beginPath();
+    ctx.arc(ballPosX, ballPosY, radius, 0, Math.PI*2, true);
+    ctx.fill();
+}
+
+function getMousePos(evt){
+    var rect = can.getBoundingClientRect();
+    var doc = document.documentElement;
+    var mouseX = event.clientX - rect.left - doc.scrollLeft;
+    var mouseY = event.clientY - rect.top - doc.scrollTop;
+    return{
+        x:mouseX,
+        y:mouseY
+    };
+}
+
+
+
+function ballReset(){
+    ballSpeedX = -ballSpeedX;
+    ballX = can.width/2;
+    ballY = can.height/2;
+}
+
+function playerScoreAdd(){
+    playerScore += scoreAdder;
+}
+
+function checkLives(){
+    if(playerLives === 0 && losed === false){
+        losed = true;
+        gameLosed();
+    }
+}
+
+function gameLosed(){
+    ballSpeedX = 0;
+    ballSpeedY = 0;
+    alert("تۆ دۆڕای\nخاڵی تۆ " + playerScore + "!\nدەست لە okبدە بۆ دوبارە دەست پێکردنەوە");
+    scoreAdder = 0;
+    playerScore = 0;
+}
+
+function drawScore(){
+    document.getElementsByTagName("p")[0].innerHTML = "Score: " + playerScore + "   Lives: " + playerLives;
+}
+
+function restartGame(){
+    if(losed === true){
+        ballSpeedX = 10;
+        ballSpeedY = 4;
+        scoreAdder = 1;
+        playerLives = 3;
+        losed = false;
+    }
+}
+
+
+</script>
+</head>
+<body align="center">
+<ul>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/home%20page/home%20page.html">سەرەتا</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html">یاری مارەکە</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html">یاری کارت</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html">مەقەست و بەرد و کاغەز</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html">مەتەڵ</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html">پەڕینەوە</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html">پینگ</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html">2048</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html">پاکمان</a></li>
+	
+</ul>
+
+<canvas height="225" id="canvas" onclick="restartGame()" width="300"></canvas>
+
+<p class="score">&nbsp;</p>
+
+<table>
+	<tbody>
+		<tr>
+			<th align="center">بابەتەکان</th>
+		</tr>
+		<tr>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html"><img alt="" class="image" src="../img/mar.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html"><img alt="" class="image" src="../img/card.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html"><img alt="" class="image" src="../img/mbk.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html"><img alt="" class="image" src="../img/matal.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html"><img alt="" class="image" src="../img/per.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html"><img alt="" class="image" src="../img/2048.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html"><img alt="" class="image" src="../img/pakman.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html"> </a></div>
+			</td>
+			
+		</tr>
+	</tbody>
+</table>
+
+
+</body>
+</html>

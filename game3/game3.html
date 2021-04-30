@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+	<link href="../img/15135810_703881689769530_7691430428131491054_n.jpg" rel="shortcut icon" />
+	<title>مەقەست و بەرد و کاغەز</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+	<style type="text/css">ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+                }
+
+            li {
+                float: left;
+                }
+
+            li a {
+                  display: block;
+                  color: white;
+                  text-align: center;
+                  padding: 14px 16px;
+                  text-decoration: none;
+                  }
+            #un{
+                text-decoration: none;
+               color:black;
+            }
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+            .container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 165px;
+  height:165px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: lawngreen;
+}
+      body{background-color:gray}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script><script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><script>var user = 0;
+var computer = 0;
+
+function startGame(c) {
+    let rand = Math.floor((Math.random() * 3));
+    let arr = ['r', 'p', 's'];
+    switch(c + arr[rand]) {
+        case 'rr':
+        case 'pp':
+        case 'ss':
+            draw();
+            break;
+        case 'rs':
+        case 'sp':
+        case 'pr':
+            win();
+            break;
+        case 'sr':
+        case 'rp':
+        case 'ps':
+            lose();
+            break;
+    }
+    
+}
+function win() {
+    ++user;
+    document.getElementById("status").innerHTML = "تۆ بردتەوە";
+    document.getElementById("score").innerHTML = user + " : " + computer;
+    document.getElementById("status").className = "col-sm-6 alert-success";
+}
+function lose() {
+    ++computer;
+    document.getElementById("status").innerHTML = "تۆ دۆڕای";
+    document.getElementById("score").innerHTML = user + " : " + computer;
+    document.getElementById("status").className = "col-sm-6 alert-danger";
+}
+function draw() {
+    document.getElementById("status").innerHTML = "یەکسان بون";
+    document.getElementById("status").className = "col-sm-6 alert-info";
+}</script>
+</head>
+<body>
+<ul>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/home%20page/home%20page.html">سەرەتا</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html">یاری مارەکە</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html">یاری کارت</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html">مەقەست و بەرد و کاغەز</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html">مەتەڵ</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html">پەڕینەوە</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html">پینگ</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html">2048</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html">پاکمان</a></li>
+</ul>
+
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-3">&nbsp;</div>
+
+<div class="col-sm-6" style="font-size: 250%; text-align: center">خاڵەکان</div>
+
+<div class="col-sm-3">&nbsp;</div>
+</div>
+
+<div class="row">
+<div class="col-sm-3">&nbsp;</div>
+
+<div class="col-sm-6" id="score" style="font-size: 250%; text-align: center">خاڵەکانمان : خاڵەکانت</div>
+
+<div class="col-sm-3">&nbsp;</div>
+</div>
+
+<div class="row" style="margin-top: 70px">
+<div class="col-sm-3">&nbsp;</div>
+
+<div class="col-sm-6" id="status" style="font-size: 250%; text-align: center">شتێک هەڵبژێرە</div>
+
+<div class="col-sm-3">&nbsp;</div>
+</div>
+
+<div class="row" style="margin-top: 15px">
+<div class="col-sm-3">&nbsp;</div>
+
+<div class="col-sm-6" style="text-align: center"><span onclick="startGame('r')"><img alt="" height="100px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/34372-200.png" title="Rock" width="100px" /></span> <span onclick="startGame('p')"><img alt="" height="100px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/1476-200.png" title="Paper" width="100px" /></span> <span onclick="startGame('s')"><img alt="" height="100px" src="https://d30y9cdsu7xlg0.cloudfront.net/png/9049-200.png" title="Scissors" width="100px" /></span></div>
+
+<div class="col-sm-3">&nbsp;</div>
+</div>
+</div>
+
+<table>
+	<tbody>
+		<tr>
+			<th align="center">بابەتەکان</th>
+		</tr>
+		<tr>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html"><img alt="" class="image" src="../img/mar.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html"><img alt="" class="image" src="../img/card.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html"><img alt="" class="image" src="../img/matal.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html"><img alt="" class="image" src="../img/per.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html"><img alt="" class="image" src="../img/ping.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html"><img alt="" class="image" src="../img/2048.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html"><img alt="" class="image" src="../img/pakman.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html"> </a></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>

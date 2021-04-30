@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<style type="text/css">ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+                }
+
+            li {
+                float: left;
+                }
+
+            li a {
+                  display: block;
+                  color: white;
+                  text-align: center;
+                  padding: 14px 16px;
+                  text-decoration: none;
+                  }
+            #un{
+                text-decoration: none;
+               color:black;
+            }
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+            .container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 165px;
+  height: 165px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: lawngreen;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+	</style>
+	<title>یاری 2048</title>
+	<link href="style/main.css" rel="stylesheet" type="text/css" />
+	<link href="../img/15135810_703881689769530_7691430428131491054_n.jpg" rel="shortcut icon" />
+	<link href="meta/apple-touch-icon.png" rel="apple-touch-icon" />
+	<link href="meta/apple-touch-startup-image-640x1096.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" /><!-- iPhone 5+ -->
+	<link href="meta/apple-touch-startup-image-640x920.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" /><!-- iPhone, retina --><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><meta name="HandheldFriendly" content="True"><meta name="MobileOptimized" content="320"><meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+<body style="cursor: auto;">
+<ul>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/home%20page/home%20page.html">سەرەتا</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html">یاری مارەکە</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html">یاری کارت</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html">مەقەست و بەرد و کاغەز</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html">مەتەڵ</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html">پەڕینەوە</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html">پینگ</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html">2048</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html">پاکمان</a></li>
+	
+</ul>
+
+<div class="container">
+<div class="heading">
+<h1 class="title">2048</h1>
+
+<div class="scores-container">
+<div class="score-container">0</div>
+
+<div class="best-container">0</div>
+</div>
+</div>
+
+<div class="above-game">
+<p class="game-intro">بەکۆکردنەوەی دووژمارەی وەک یەک ئەنجامەکەی بگەیەنە<strong>2048</strong></p>
+<a class="restart-button">لەسەرەتاوە دەست پێبکە</a></div>
+
+<div class="game-container">
+<div class="game-message">
+<p>&nbsp;</p>
+
+<div class="lower"><a class="keep-playing-button">Keep going</a> <a class="retry-button">دووبارە دەست پێبکەوە</a></div>
+</div>
+
+<div class="grid-container">
+<div class="grid-row">
+<div class="grid-cell">&nbsp;</div>
+
+<div class="grid-cell">&nbsp;</div>
+
+<div class="grid-cell">&nbsp;</div>
+
+<div class="grid-cell">&nbsp;</div>
+</div>
+
+<div class="grid-row">
+<div class="grid-cell">&nbsp;</div>
+
+<div class="grid-cell">&nbsp;</div>
+
+<div class="grid-cell">&nbsp;</div>
+
+<div class="grid-cell">&nbsp;</div>
+</div>
+
+<div class="grid-row">
+<div class="grid-cell">&nbsp;</div>
+
+<div class="grid-cell">&nbsp;</div>
+
+<div class="grid-cell">&nbsp;</div>
+
+<div class="grid-cell">&nbsp;</div>
+</div>
+
+<div class="grid-row">
+<div class="grid-cell">&nbsp;</div>
+
+<div class="grid-cell">&nbsp;</div>
+
+<div class="grid-cell">&nbsp;</div>
+
+<div class="grid-cell">&nbsp;</div>
+</div>
+</div>
+
+<div class="tile-container">&nbsp;</div>
+</div>
+<script src="js/bind_polyfill.js"></script><script src="js/classlist_polyfill.js"></script><script src="js/animframe_polyfill.js"></script><script src="js/keyboard_input_manager.js"></script><script src="js/html_actuator.js"></script><script src="js/grid.js"></script><script src="js/tile.js"></script><script src="js/local_storage_manager.js"></script><script src="js/game_manager.js"></script><script src="js/application.js"></script></div>
+
+<table style="width: 1551px;">
+	<tbody>
+		<tr>
+			<th align="center" style="width: 170px;">بابەتەکان</th>
+		</tr>
+		<tr>
+			<td style="width: 170px;">
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html"><img alt="" class="image" src="../img/mar.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html"> </a></div>
+			</td>
+			<td style="width: 221px;">
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html"><img alt="" class="image" src="../img/card.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html"><img alt="" class="image" src="../img/mbk.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html"><img alt="" class="image" src="../img/matal.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html"><img alt="" class="image" src="../img/per.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html"><img alt="" class="image" src="../img/ping.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html"><img alt="" class="image" src="../img/2048.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html"><img alt="" class="image" src="../img/pakman.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html"> </a></div>
+			</td>
+		
+	</tbody>
+</table>
+
+
+</body>
+</html>

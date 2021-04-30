@@ -1,0 +1,598 @@
+<html>
+<head>
+	<title>یاری کارت</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link href="../img/15135810_703881689769530_7691430428131491054_n.jpg" rel="shortcut icon" />
+	<style type="text/css">body {margin: auto; background-color: black}
+            th{
+                color: white
+            }
+          
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+                }
+
+            li {
+                float: left;
+                }
+
+            li a {
+                  display: block;
+                  color: white;
+                  text-align: center;
+                  padding: 14px 16px;
+                  text-decoration: none;
+                  }
+            #un{
+                text-decoration: none;
+               color:white;
+            }
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+            .container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  display: block;
+  width: 160px;
+  height: 160px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: lawngreen;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+#container {width: 360px; height: 100%; margin: auto; text-align: center}
+
+div {font-size: 0px}
+
+#title {background-color: black; font-weight: bold; font-size: 20px}
+
+.cpu {float: left; clear: left; width: 100%; background-color: #00ff43}
+
+#card0 {margin: 10px 10px 10px 60px; float: left; width: 40px; height: 50px; background-color: white; border-radius: 5px; line-height: 50px}
+
+#card1, #card2, #card3, #card4, #card6, #card7, #card8, #card9 {margin: 10px 10px 10px 0px; float: left; width: 40px; height: 50px; background-color: white; border-radius: 5px; line-height: 50px}
+
+#card5 {margin: 10px 10px 10px 60px; clear: both; float: left; width: 40px; height: 50px; background-color: white; border-radius: 5px; line-height: 50px}
+
+.table {float: left; clear: left; width: 100%; background-color: #00ff43}
+
+#tableCard {width: 96px; height: 120px; margin: 15px 132px 15px 132px; background-color: white; border-radius: 12px; background-color: #00ff43}
+
+.you {float: left; clear: left; width: 100%; background-color: #00ff43}
+
+.stuff {float: left; clear: left; width: 100%; height: 180px; background-color:black}
+
+p {font-size: 20px; font-weight: bold; text-align: center; color: white; margin: 10px}
+
+#drawBtn {margin-right: 28px; font-size: 20px; font-weight: bold; background-color: #0F0; border-radius: 5px; float: left}
+
+#washBtn {margin-right: 28px; font-size: 20px; font-weight: bold; background-color: #F00; border-radius: 5px; float: left}
+
+#newBtn {font-size: 20px; font-weight: bold; background-color: #808080; border-radius: 5px; float: left}
+
+#result {margin-top: 57px; font-size: 20px}
+body{background-color:gray}
+	</style>
+	<script>var myColors = ['R', 'Y', 'G', 'B'] ;
+
+window.onload = function() {
+    alert("بەخێربێێ  بۆ یاریەکەم بەهیوای کاتێکی خۆش!") ;
+    var a = document.getElementById("card0") ;
+    var b = document.getElementById("card1") ;
+    var c = document.getElementById("card2") ;
+    var d = document.getElementById("card3") ;
+    var e = document.getElementById("card4") ;
+    var f = document.getElementById("card5") ;
+    var g = document.getElementById("card6") ;
+    var h = document.getElementById("card7") ;
+    var i = document.getElementById("card8") ;
+    var j = document.getElementById("card9") ;
+    var z = document.getElementById("tableCard") ;
+    a.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    b.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    c.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    d.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    e.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    f.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    g.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    h.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    i.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    j.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    z.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    colorizeCPU(a) ; colorizeCPU(b) ; colorizeCPU(c) ; colorizeCPU(d) ; colorizeCPU(e) ; colorize(f) ; colorize(g) ; colorize(h) ; colorize(i) ; colorize(j) ; colorize(z) ;
+}
+
+function newGame() {
+    var a = document.getElementById("card0") ;
+    var b = document.getElementById("card1") ;
+    var c = document.getElementById("card2") ;
+    var d = document.getElementById("card3") ;
+    var e = document.getElementById("card4") ;
+    var f = document.getElementById("card5") ;
+    var g = document.getElementById("card6") ;
+    var h = document.getElementById("card7") ;
+    var i = document.getElementById("card8") ;
+    var j = document.getElementById("card9") ;
+    var z = document.getElementById("tableCard") ;
+    a.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    b.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    c.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    d.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    e.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    f.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    g.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    h.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    i.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    j.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    z.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    colorizeCPU(a) ; colorizeCPU(b) ; colorizeCPU(c) ; colorizeCPU(d) ; colorizeCPU(e) ; colorize(f) ; colorize(g) ; colorize(h) ; colorize(i) ; colorize(j) ; colorize(z) ;
+}
+
+function colorize(card) {
+    switch (card.innerHTML) {
+        case "R":
+        card.style.backgroundColor = "#DF0001" ;
+        card.style.color = "#DF0001" ;
+        break ;
+        case "Y":
+        card.style.backgroundColor = "#FFD302" ;
+        card.style.color = "#FFD302" ;
+        break ;
+        case "G":
+        card.style.backgroundColor = "#019B4A" ;
+        card.style.color = "#019B4A" ;
+        break ;
+        case "B":
+        card.style.backgroundColor = "#0093E1" ;
+        card.style.color = "#0093E1" ;
+        break ;
+        case "N":
+        card.style.backgroundColor = "darkgreen" ;
+        card.style.color = "darkgreen" ;
+        break ;
+    } ;
+}
+
+function colorizeCPU(card) {
+    card.style.backgroundColor = "#808080" ;
+}
+
+function playCard(cardID) {
+    var f = document.getElementById("card5") ;
+    var g = document.getElementById("card6") ;
+    var h = document.getElementById("card7") ;
+    var i = document.getElementById("card8") ;
+    var j = document.getElementById("card9") ;
+    var z = document.getElementById("tableCard") ;
+    switch (cardID) {
+        case "ff":
+        putCard(f) ;
+        break;
+        case "gg":
+        putCard(g) ;
+        break;
+        case "hh":
+        putCard(h) ;
+        break;
+        case "ii":
+        putCard(i) ;
+        break;
+        case "jj":
+        putCard(j) ;
+        break;
+    } ;
+    if (f.innerHTML == "N" && g.innerHTML == "N" && h.innerHTML == "N" && i.innerHTML == "N" && j.innerHTML == "N") {
+        setTimeout(function() {alert("تۆ بردتەوە!"); newGame()}, 500) ;
+    } ;
+}
+
+function putCard(playedCard) {
+    var z = document.getElementById("tableCard") ;
+    switch (playedCard.innerHTML) {
+        case "R":
+        if (z.innerHTML == "Y" || z.innerHTML == "B") {
+            z.innerHTML = "R" ;
+            colorize(z) ;
+            playedCard.innerHTML = "N" ;
+            colorize(playedCard) ;
+            setTimeout(function() {playCPU()}, 500) ;
+        } ;
+        break ;
+        case "Y":
+        if (z.innerHTML == "R" || z.innerHTML == "G") {
+            z.innerHTML = "Y" ;
+            colorize(document.getElementById("tableCard")) ;
+            playedCard.innerHTML = "N" ;
+            colorize(playedCard) ;
+            setTimeout(function() {playCPU()}, 500) ;
+        } ;
+        break ;
+        case "G":
+        if (z.innerHTML == "Y" || z.innerHTML == "B") {
+            z.innerHTML = "G" ;
+            colorize(z) ;
+            playedCard.innerHTML = "N" ;
+            colorize(playedCard) ;
+            setTimeout(function() {playCPU()}, 500) ;
+        } ;
+        break ;
+        case "B":
+        if (z.innerHTML == "G" || z.innerHTML == "R") {
+            z.innerHTML = "B" ;
+            colorize(z) ;
+            playedCard.innerHTML = "N" ;
+            colorize(playedCard) ;
+            setTimeout(function() {playCPU()}, 500) ;
+        } ;
+        break ;
+        case "N":
+        break ;
+    } ;
+}
+
+function playCPU() {
+    var a = document.getElementById("card0") ;
+    var b = document.getElementById("card1") ;
+    var c = document.getElementById("card2") ;
+    var d = document.getElementById("card3") ;
+    var e = document.getElementById("card4") ;
+    var z = document.getElementById("tableCard") ;
+    switch (z.innerHTML) {
+        case "R":
+        if (a.innerHTML == "Y" || a.innerHTML == "B") {
+            putCPU(a)
+        } else if (b.innerHTML == "Y" || a.innerHTML == "B") {
+            putCPU(b)
+        } else if (c.innerHTML == "Y" || a.innerHTML == "B") {
+            putCPU(c)
+        } else if (d.innerHTML == "Y" || a.innerHTML == "B") {
+            putCPU(d)
+        } else if (e.innerHTML == "Y" || a.innerHTML == "B") {
+            putCPU(e)
+        } else {
+            drawCPU()
+        } ;
+        break ;
+        case "Y":
+        if (a.innerHTML == "R" || a.innerHTML == "G") {
+            putCPU(a)
+        } else if (b.innerHTML == "R" || b.innerHTML == "G") {
+            putCPU(b)
+        } else if (c.innerHTML == "R" || c.innerHTML == "G") {
+            putCPU(c)
+        } else if (d.innerHTML == "R" || d.innerHTML == "G") {
+            putCPU(d)
+        } else if (e.innerHTML == "R" || e.innerHTML == "G") {
+            putCPU(e)
+        } else {
+            drawCPU()
+        } ;
+        break ;
+        case "G":
+        if (a.innerHTML == "Y" || a.innerHTML == "B") {
+            putCPU(a)
+        } else if (b.innerHTML == "Y" || b.innerHTML == "B") {
+            putCPU(b)
+        } else if (c.innerHTML == "Y" || c.innerHTML == "B") {
+            putCPU(c)
+        } else if (d.innerHTML == "Y" || d.innerHTML == "B") {
+            putCPU(d)
+        } else if (e.innerHTML == "Y" || e.innerHTML == "B") {
+            putCPU(e)
+        } else {
+            drawCPU()
+        } ;
+        break ;
+        case "B":
+        if (a.innerHTML == "G" || z.innerHTML == "R") {
+            putCPU(a)
+        } else if (b.innerHTML == "G" || z.innerHTML == "R") {
+            putCPU(b)
+        } else if (c.innerHTML == "G" || z.innerHTML == "R") {
+            putCPU(c)
+        } else if (d.innerHTML == "G" || z.innerHTML == "R") {
+            putCPU(d)
+        } else if (e.innerHTML == "G" || z.innerHTML == "R") {
+            putCPU(e)
+        } else {
+            drawCPU()
+        } ;
+        break ;
+    } ;
+    if (a.innerHTML == "N" && b.innerHTML == "N" && c.innerHTML == "N" && d.innerHTML == "N" && e.innerHTML == "N") {
+        setTimeout(function() {alert("تۆ دۆڕای"); newGame()}, 500) ;
+    } ;
+}
+
+function putCPU(playedCard2) {
+    var z = document.getElementById("tableCard") ;
+    switch (playedCard2.innerHTML) {
+        case "R":
+        z.innerHTML = "R" ;
+        colorize(z) ;
+        playedCard2.innerHTML = "N" ;
+        colorize(playedCard2) ;
+        break ;
+        case "Y":
+        z.innerHTML = "Y" ;
+        colorize(z) ;
+        playedCard2.innerHTML = "N" ;
+        colorize(playedCard2) ;
+        break ;
+        case "G":
+        z.innerHTML = "G" ;
+        colorize(z) ;
+        playedCard2.innerHTML = "N" ;
+        colorize(playedCard2) ;
+        break ;
+        case "B":
+        z.innerHTML = "B" ;
+        colorize(z) ;
+        playedCard2.innerHTML = "N" ;
+        colorize(playedCard2) ;
+        break ;
+    } ;
+} ;
+
+function drawCard() {
+    var f = document.getElementById("card5") ;
+    var g = document.getElementById("card6") ;
+    var h = document.getElementById("card7") ;
+    var i = document.getElementById("card8") ;
+    var j = document.getElementById("card9") ;
+    document.getElementById("result").innerHTML = "تۆ کارتت ڕاکێشا" ;
+    setTimeout(function() {document.getElementById("result").innerHTML = ""}, 2000) ;
+    if (f.innerHTML == "N") {
+        f.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+        colorize(f) ;
+        setTimeout(function() {playCPU()}, 500) ;
+    } else if (g.innerHTML == "N") {
+        g.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+        colorize(g) ;
+        setTimeout(function() {playCPU()}, 500) ;
+    } else if (h.innerHTML == "N") {
+        h.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+        colorize(h) ;
+        setTimeout(function() {playCPU()}, 500) ;
+    } else if (i.innerHTML == "N") {
+        i.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+        colorize(i) ;
+        setTimeout(function() {playCPU()}, 500) ;
+    } else if (j.innerHTML == "N") {
+        j.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+        colorize(j) ;
+        setTimeout(function() {playCPU()}, 500) ;
+    } ;
+}
+
+function drawCPU() {
+    var a = document.getElementById("card0") ;
+    var b = document.getElementById("card1") ;
+    var c = document.getElementById("card2") ;
+    var d = document.getElementById("card3") ;
+    var e = document.getElementById("card4") ;
+    document.getElementById("result").innerHTML = "سیستەم کارتی ڕاکێشا" ;
+    setTimeout(function() {document.getElementById("result").innerHTML = ""}, 2000) ;
+    if (a.innerHTML == "N") {
+        a.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+        colorizeCPU(a) ;
+    } else if (b.innerHTML == "N") {
+        b.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+        colorizeCPU(b) ;
+    } else if (c.innerHTML == "N") {
+        c.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+        colorizeCPU(c) ;
+    } else if (d.innerHTML == "N") {
+        d.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+        colorizeCPU(d) ;
+    } else if (e.innerHTML == "N") {
+        e.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+        colorizeCPU(e) ;
+    } else {
+        washCPU() ;
+    } ;
+}
+
+function washCards() {
+    var f = document.getElementById("card5") ;
+    var g = document.getElementById("card6") ;
+    var h = document.getElementById("card7") ;
+    var i = document.getElementById("card8") ;
+    var j = document.getElementById("card9") ;
+    document.getElementById("result").innerHTML = "You washed your cards." ;
+    setTimeout(function() {document.getElementById("result").innerHTML = ""}, 2000) ;
+    f.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    g.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    h.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    i.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    j.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    colorize(f) ; colorize(g) ; colorize(h) ; colorize(i) ; colorize(j) ;
+    setTimeout(function() {playCPU()}, 500) ;
+}
+
+function washCPU() {
+    var a = document.getElementById("card0") ;
+    var b = document.getElementById("card1") ;
+    var c = document.getElementById("card2") ;
+    var d = document.getElementById("card3") ;
+    var e = document.getElementById("card4") ;
+    document.getElementById("result").innerHTML = "Computer washed its cards." ;
+    setTimeout(function() {document.getElementById("result").innerHTML = ""}, 2000) ;
+    a.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    b.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    c.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    d.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    e.innerHTML = myColors[Math.floor(Math.random() * 4)] ;
+    colorizeCPU(a) ; colorizeCPU(b) ; colorizeCPU(c) ; colorizeCPU(d) ; colorizeCPU(e) ;
+}
+
+function toggleRules() {
+    alert("Welcome to Four Colors! The objective of the game is to get rid of all your cards. The colors of the cards are in the order of Red, Yellow, Green and Blue. At the beginning of the game, there will be a random card in the center. You can only play a card adjacent to that card in the order (Red and Blue are considered adjacent). For instance, if the center card is Yellow, you can only play a Red or Green card. Similarly, if the center card is Blue, you can play a Red or Green card. If you have no available cards to play, you may draw a random card or wash your cards and redraw five random cards, at the cost of your turn. I hope you can have fun with the game I made!") ;
+}</script>
+</head>
+<body>
+<ul>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/home%20page/home%20page.html">سەرەتا</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html">یاری مارەکە</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html">یاری کارت</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html">مەقەست و بەرد و کاغەز</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html">مەتەڵ</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html">پەڕینەوە</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html">پینگ</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html">2048</a></li>
+	<li><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html">پاکمان</a></li>
+</ul>
+
+<table angle="center">
+	<tbody>
+      
+		<tr>
+          <td><img alt="" height="500" href="https://drive.google.com/open?id=0B46ohAs1-gdqbjVwRkNsaHZUb3M" width="200" /></td>
+			<td>
+			<div id="container">
+			<div id="title"><font color="#DF0001">چو</font><font color="#FFD302">ار</font> <font color="#019B4A">ڕە</font><font color="#0093E1">نگە</font></div>
+
+			<div class="cpu">
+			<div id="card0">&nbsp;</div>
+
+			<div id="card1">&nbsp;</div>
+
+			<div id="card2">&nbsp;</div>
+
+			<div id="card3">&nbsp;</div>
+
+			<div id="card4">&nbsp;</div>
+			</div>
+
+			<div class="table">
+			<div id="tableCard">&nbsp;</div>
+			</div>
+
+			<div class="you">
+			<div id="card5" onclick="playCard('ff')">&nbsp;</div>
+
+			<div id="card6" onclick="playCard('gg')">&nbsp;</div>
+
+			<div id="card7" onclick="playCard('hh')">&nbsp;</div>
+
+			<div id="card8" onclick="playCard('ii')">&nbsp;</div>
+
+			<div id="card9" onclick="playCard('jj')">&nbsp;</div>
+			</div>
+
+			<div class="stuff">
+			<p>لیست : <font color="#DF0001">سور</font> <font color="#FFD302">زەرد</font> <font color="#019B4A">سەوز</font> <font color="#0093E1">شین</font></p>
+
+			<p><button id="drawBtn" onclick="drawCard()">ڕاکێشان</button><button id="washBtn" onclick="washCards()">نوێکردنەوەی کارتەکان</button><button id="newBtn" onclick="newGame()">یاریەکی نوێ</button></p>
+
+			<p id="result">&nbsp;</p>
+			</div>
+			</div>
+			</td>
+			<td><img alt="" height="500" href="https://drive.google.com/open?id=0B46ohAs1-gdqbjVwRkNsaHZUb3M" width="300" /></td>
+			<td><a href="https://www.facebook.com/%D9%BE%DB%95%DB%8C%D9%85%D8%A7%D9%86%DA%AF%D8%A7%D9%89-%DA%A9%DB%86%D9%85%D9%BE%DB%8C%D9%88%D8%AA%DB%95%D8%B1%D9%89-%D9%82%DB%95%D9%84%D8%A7%D8%AF%D8%B2%DB%8E%D9%89-%D8%A6%DB%95%D9%87%D9%84%D9%89-319809401510096/"><img alt="" height="500" src="../img/15135810_703881689769530_7691430428131491054_n.jpg" width="450" /></a></td>
+		</tr>
+	</tbody>
+</table>
+
+<table>
+	<tbody>
+		<tr>
+			<th align="center">بابەتەکان</th>
+		</tr>
+		<tr>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html"><img alt="" class="image" src="../img/mar.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game1/game1.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html"><img alt="" class="image" src="../img/card.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game2/game2.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html"><img alt="" class="image" src="../img/mbk.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game3/game3.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html"><img alt="" class="image" src="../img/matal.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game4/game4.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html"><img alt="" class="image" src="../img/per.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game5/game5.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html"><img alt="" class="image" src="../img/ping.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game6/game6.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html"><img alt="" class="image" src="../img/2048.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game7/game7.html"> </a></div>
+			</td>
+			<td>
+			<div class="container"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html"><img alt="" class="image" src="../img/pakman.PNG" /> </a>
+			<div class="overlay">
+			<div class="text"><a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html">دەست پێبکە</a></div>
+			</div>
+			<a href="https://www-drv.com/site/9ofk3er7ryhvpqioffywtg/my%20pro/game8/game8.html"> </a></div>
+			</td>
+		</tr>
+	</tbody>
+</table>
+</body>
+</html>
